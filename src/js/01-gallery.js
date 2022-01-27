@@ -6,8 +6,6 @@ import { galleryItems } from './gallery-items';
 
 // console.log(galleryItems);
 
-
-
 const galleryContainer = document.querySelector(`.gallery`);
 const cardsMarkup = createImgCardsMarkup(galleryItems);
 galleryContainer.insertAdjacentHTML(`beforeend`, cardsMarkup);
@@ -26,7 +24,7 @@ function createImgCardsMarkup(images) {
     })
     .join(``);
 }
-const lightbox = new SimpleLightbox(".gallery a", {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: `alt`,
   captionDelay: 250,
   doubleTapZoom: 1,
