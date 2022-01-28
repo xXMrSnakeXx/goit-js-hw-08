@@ -13,4 +13,15 @@ function recordKeyInLocalStorage(data) {
 
 player.on('timeupdate', throttle(recordKeyInLocalStorage, 1000));
 
-player.setCurrentTime(localStorage.getItem(STORAGE_KEY));
+player
+  .setCurrentTime(localStorage.getItem(STORAGE_KEY))
+  .then(function (seconds) {})
+  .catch(function (error) {
+    switch (error.name) {
+      case 'RangeError':
+        break;
+
+      default:
+        break;
+    }
+  });
